@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\HomeController::class, 'landingPage'])->name('landingPage');
+Route::get('/load-more', [App\Http\Controllers\HomeController::class, 'loadmore'])->name('loadmore');
+
 
 Auth::routes();
 

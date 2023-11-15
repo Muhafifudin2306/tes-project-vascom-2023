@@ -117,7 +117,7 @@ a:hover {
 
 /* Login */
 .blue-block {
-    background-image: url("./blue-block.png");
+    background-image: url("../image/blue-block.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
