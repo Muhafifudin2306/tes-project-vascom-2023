@@ -1,0 +1,202 @@
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins&display=swap');
+
+:root {
+    --font-one: 'SF Pro Display', sans-serif;
+    --font-two: 'Playfair Display', serif;
+    --font-three: 'Poppins', sans-serif;
+    --primary: #41A0E4;
+    --primary-2: #C2D6FF;
+    --secondary: #F9F9F9;
+    --primary-hover: #07436e;
+    --blue-dark: #002060;
+}
+
+body {
+    font-family: var(--font-one) !important;
+}
+
+a {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: #07436e !important;
+}
+
+.blue-bg-primary {
+    background-color: var(--primary) !important;
+}
+
+.grey-bg-secondary {
+    background-color: var(--secondary) !important;
+}
+
+.blue-bg-primary:hover {
+    background-color: var(--primary-hover) !important;
+}
+
+.blue-border-primary {
+    border-color: var(--primary) !important;
+}
+
+.grey-border-secondary {
+    border-color: var(--secondary) !important;
+}
+
+.grey-border-secondary:focus {
+    border-color: var(--secondary) !important;
+}
+
+.blue-border-primary:hover {
+    border-color: var(--primary-hover) !important;
+}
+
+.blue-text-primary {
+    color: var(--primary) !important;
+}
+
+.blue-text-primary:hover {
+    color: white !important;
+}
+
+.blue-text {
+    color: var(--primary) !important;
+}
+
+.white-bg-button {
+    background-color: white !important;
+}
+
+.white-bg-button:hover {
+    background-color: var(--primary-hover) !important;
+}
+
+.blue-bg-primary:hover {
+    background-color: var(--primary-hover) !important;
+}
+
+.font-one {
+    font-family: var(--font-one) !important;
+}
+
+.font-two {
+    font-family: var(--font-two) !important;
+}
+
+.font-three {
+    font-family: var(--font-three) !important;
+}
+
+
+.l-space-1 {
+    letter-spacing: 0.1em;
+}
+
+.l-space-2 {
+    letter-spacing: 0.2em;
+}
+
+.l-space-3 {
+    letter-spacing: 0.3em;
+}
+
+.parfume-card {
+    height: 300px;
+}
+
+.parfume-card:hover {
+    border: 1px solid #D6D6D6;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+}
+
+.image-card {
+    height: 175px;
+}
+
+/* Login */
+.blue-block {
+    background-image: url("./blue-block.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login-block {
+    width: 50%;
+}
+
+.left-panel {
+    width: 20%;
+}
+
+.content-panel {
+    width: 80%;
+}
+
+@media screen and (max-width: 1024px) {
+    .login-block {
+        width: 100%;
+    }
+
+    .left-panel {
+        width: 15%;
+    }
+
+    .content-panel {
+        width: 85%;
+    }
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+.profile-navbar:hover {
+    border: 1px solid #D6D6D6;
+    border-radius: 10px;
+}
+
+.bg-grey-custom {
+    background-color: #F8F8F8 !important;
+}
+
+.card-profile {
+    display: none;
+    position: absolute;
+    top: 0;
+    margin-left: -25px !important;
+    border-radius: 10px;
+    margin-top: 80px;
+    z-index: 999999;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+    inline-size: 275px;
+    overflow-wrap: break-word;
+}
+
+.fs-7 {
+    font-size: 0.9rem !important;
+}
+
+.fs-8 {
+    font-size: 0.8rem !important;
+}
+
+.left-panel .active {
+    background-color: var(--primary);
+    color: white !important;
+}
+
+.analytic-card {
+    background-image: url("./bg-card.png");
+    background-size: auto;
+}
+
+.blue-bg-primary-2 {
+    background-color: var(--primary-2) !important;
+}
+
+.text-blue-dark {
+    color: var(--blue-dark);
+}
