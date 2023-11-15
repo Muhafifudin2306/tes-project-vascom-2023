@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('product_name');
             $table->decimal('product_price', 10, 2);
             $table->text('note')->nullable(); 
+            $table->enum('status', ['active', 'non-active'])->default('active');
             $table->timestamps();
         });
     }

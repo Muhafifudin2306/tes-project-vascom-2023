@@ -42,9 +42,4 @@ class HomeController extends Controller
         return view('loadmore', compact('products'));
     }
     
-
-    public function index()
-    {
-        return view('home');
-    }
 }

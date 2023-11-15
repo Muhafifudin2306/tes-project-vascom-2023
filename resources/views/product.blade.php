@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Page</title>
+    <title> Product Setting Page</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -72,7 +72,7 @@
     <main>
         <div class="d-flex">
             <div class="left-panel vh-100">
-                <div class="panel-list p-3 active">
+                <div class="panel-list p-3">
                     <div class="panel-content d-none d-lg-inline">
                         <a href="{{ url('/home') }}" class="d-flex gap-3 align-items-center">
                             <i class="bi bi-house-door fs-3"></i>
@@ -94,7 +94,7 @@
                         <i class="bi bi-search fs-1 text-center"></i>
                     </div>
                 </div>
-                <div class="panel-list p-3">
+                <div class="panel-list p-3 active">
                     <div class="panel-content d-none d-lg-inline">
                         <a href="{{ url('/product') }}" class="d-flex gap-3 align-items-center">
                             <i class="bi bi-card-list fs-3"></i>
@@ -108,35 +108,9 @@
             </div>
             <div class="content-panel bg-grey-custom vh-100">
                 <div class="p-4">
-                    <h4 class="fw-bold mb-5">Dashboard</h4>
-                    <div class="row mb-3">
-                        <div class="col-lg-3 mb-3">
-                            <div class="blue-bg-primary-2 p-4 rounded">
-                                <h6 class="text-secondary">Jumlah User</h6>
-                                <h5 class="text-blue-dark fw-bold">{{ $totalUsers }} User</h5>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 mb-3">
-                            <div class="blue-bg-primary-2 p-4 rounded">
-                                <h6 class="text-secondary">Jumlah User Aktif</h6>
-                                <h5 class="text-blue-dark fw-bold">{{ $activeUsers }} User</h5>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 mb-3">
-                            <div class="blue-bg-primary-2 p-4 rounded">
-                                <h6 class="text-secondary">Jumlah Produk</h6>
-                                <h5 class="text-blue-dark fw-bold">{{ $totalProducts }} Produk</h5>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 mb-3">
-                            <div class="blue-bg-primary-2 p-4 rounded">
-                                <h6 class="text-secondary">Jumlah Produk Aktif</h6>
-                                <h5 class="text-blue-dark fw-bold">{{ $activeProducts }} Produk Aktif</h5>
-                            </div>
-                        </div>
-                    </div>
+                    <h4 class="fw-bold mb-5">Manajemen Produk</h4>
+
                     <div class="table-filed bg-white rounded border p-4">
-                        <span class="fw-bold fs-7">Produk Terbaru</span>
                         <div class="mb-4"></div>
                         <table id="example" class="table table-striped" style="width:100%">
                             <thead>
@@ -144,11 +118,12 @@
                                     <th>Gambar Produk</th>
                                     <th>Nama Produk</th>
                                     <th>Harga (Rp)</th>
+                                    <th>Status</th>
                                     <th>Tanggal Dibuat</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($latestProducts as $item)
+                                @foreach ($products as $item)
                                     <tr class="text-center">
                                         <td>
                                             <img class="mx-2"
@@ -157,6 +132,11 @@
                                         </td>
                                         <td>{{ $item->product_name }}</td>
                                         <td>{{ number_format($item->product_price, 0, ',', '.') }}</td>
+                                        @if ($item->status == 'active')
+                                            <td> <button class="btn btn-success">{{ $item->status }}</button> </td>
+                                        @elseif ($item->status == 'non-active')
+                                            <td> <button class="btn btn-danger">{{ $item->status }}</button></td>
+                                        @endif
                                         <td>{{ $item->updated_at->format('d F Y') }}</td>
                                     </tr>
                                 @endforeach

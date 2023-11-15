@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('telephone')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->enum('status', ['active', 'non-active'])->default('non-active');
             $table->rememberToken();
             $table->timestamps();
         });

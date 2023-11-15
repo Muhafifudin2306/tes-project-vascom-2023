@@ -19,4 +19,7 @@ Route::get('/load-more', [App\Http\Controllers\HomeController::class, 'loadmore'
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\DashboardController::class, 'index'])->name('home');
+Route::get('/account', [App\Http\Controllers\DashboardController::class, 'account'])->name('account');
+Route::get('/product', [App\Http\Controllers\DashboardController::class, 'product'])->name('product');
+Route::post('/user/active/{id}', [App\Http\Controllers\DashboardController::class, 'updateUser'])->name('updateUser');

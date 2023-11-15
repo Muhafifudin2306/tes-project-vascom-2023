@@ -20,7 +20,15 @@ class UserSeeder extends Seeder
                 'name' => 'Muhammad Afifudin',
                 'email' => 'muhafifudin2306@gmail.com',
                 'telephone' => '083866678086',
-                'password' => Hash::make('admin123')
+                'password' => Hash::make('admin123'),
+                'status' => 'active'
+            ],
+            [
+                'name' => 'Muhammad Afifudin',
+                'email' => 'muhafifudin66@gmail.com',
+                'telephone' => '083862414847',
+                'password' => Hash::make('admin123'),
+                'status' => 'non-active'
             ],
         ];
 
